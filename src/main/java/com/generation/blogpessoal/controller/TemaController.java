@@ -29,8 +29,13 @@ public class TemaController {
         return ResponseEntity.ok(temaRepository.findAll());
     }
 
-
-
+    @GetMapping("/{id}")
+    public ResponseEntity<Tema> getById(@PathVariable Long id) {
+        return temaRepository.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+        
 
     @GetMapping("/descricao/{descricao}")
     public ResponseEntity<List<Tema>> getByTitle(@PathVariable String descricao){

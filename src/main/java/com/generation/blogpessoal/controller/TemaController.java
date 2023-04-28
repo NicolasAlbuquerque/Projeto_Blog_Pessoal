@@ -16,7 +16,7 @@ import java.util.Optional;
 
 import static org.springframework.beans.factory.config.YamlProcessor.MatchStatus.NOT_FOUND;
 
-@Repository
+@Controller
 @RequestMapping("/temas")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
